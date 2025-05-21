@@ -5,7 +5,19 @@
     <meta name="viewport" content="width=device-
     width, initial-scale=1.0">
     <title>portfolio</title>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (window.innerWidth > 768) {
+          const navButtons = document.querySelector('.cl1').querySelectorAll('button:not(.mobile-menu-toggle)');
+          navButtons.forEach(button => {
+            button.style.display = 'block';
+          });
+        }
+      });
+    </script>
+    <script src="script.js" defer></script>
     <style>
+      
       .first-img{
         width:400px;
         height:400px;
@@ -37,6 +49,19 @@
         font-size: 18px;
         font-family: poppins;
         padding-left:100px;
+      }
+
+  
+      .cl1 button:not(.mobile-menu-toggle) {
+        display: none;
+        width: 100%;
+        text-align: left;
+        padding: 10px;
+      }
+  
+      .cl1 {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
 
@@ -477,6 +502,34 @@
       margin-top:30px;
       margin-left:100px; 
       }
+
+      .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 10px;
+      }
+
+      @media (max-width: 768px) {
+      .mobile-menu-toggle {
+        display: block;
+  }
+  
+     .cl1 button:not(.mobile-menu-toggle) {
+        display: none;
+        width: 100%;
+        text-align: left;
+        padding: 10px;
+  }
+  
+     .cl1 {
+       flex-direction: column;
+       align-items: flex-start;
+     }
+  }
+    
     </style>
   </head>
   <body>
@@ -657,4 +710,4 @@
       
     </div>
   </body>
-</html>
+</html> 
